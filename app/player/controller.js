@@ -30,7 +30,7 @@ module.exports = {
             .populate('nominals')
             .populate('user', '_id name phoneNumber')
 
-            const payment = await Payment.find()
+            const payment = await Payment.find().populate('banks')
 
             if(!voucher){
                 res.status(404).json({ message : "Voucher tidak ditemukan"})
