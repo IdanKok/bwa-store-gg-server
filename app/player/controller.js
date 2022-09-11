@@ -30,10 +30,12 @@ module.exports = {
             .populate('nominals')
             .populate('user', '_id name phoneNumber')
 
+            const payment = await Payment.find()
+
             if(!voucher){
                 res.status(404).json({ message : "Voucher tidak ditemukan"})
             }
-            res.status(200).json({data : voucher})
+            res.status(200).json({data : {detail : voucher , payment: payment} })
         } catch (error) {
             res.status(500).json({ message: error.message || `Internal server error`})
         }

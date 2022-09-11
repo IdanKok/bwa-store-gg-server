@@ -22,10 +22,12 @@ const mongoose = require('mongoose');
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Nominal'
     }],
+  
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
+
 
 }, {timestamps: true})
 
