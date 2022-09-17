@@ -37,7 +37,7 @@ module.exports = {
                       await player.save();
 
                       delete player._doc.password
-                      res.status(201).json({ data: player) 
+                      res.status(201).json({ data: player}) 
                  
                   } catch (error) {
                     if(error && error.name === "ValidationError")
