@@ -41,6 +41,8 @@ module.exports = {
         }
     },
 
+    
+
     category: async(req,res) => {
         try {
             const category = await  Category.find()
