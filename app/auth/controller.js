@@ -40,13 +40,16 @@ module.exports = {
                       res.status(201).json({ data: player}) 
                  
                   } catch (error) {
-                    if(error && error.name === "ValidationError")
-                    return  res.status(422).json({
+                    if(error && error.name === "ValidationError"){  
+                      return  res.status(422).json({
                         error:1,
                         message: error.message,
                         fields: error.errors
                     })
-                  }
+
+                    }
+                    next(error)
+                  } 
                 });
             } else {
                 let player = new Player(payload)
@@ -55,11 +58,6 @@ module.exports = {
                 res.status(201).json({ data: player}) 
 
             }
-
-            return  res.status(201).json({
-                message: payload
-            })
-
         } catch (error) {   
             if(error && error.name === "ValidationError")
             return  res.status(422).json({
