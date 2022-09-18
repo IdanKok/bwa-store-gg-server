@@ -24,7 +24,7 @@ module.exports ={
         src.on('end', async ()=>{
           try {
 
-            let player = new Player({ payload, avatar: filename })
+            let player = new Player({ ...payload, avatar: filename })
 
             await player.save();
 
