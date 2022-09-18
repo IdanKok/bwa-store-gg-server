@@ -52,10 +52,10 @@ phoneNumber :{
     minLength : [9, 'panjang nomor telepon harus antara 9 - 13 karakter']
 },
 
-favorite: [{
+favorite: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Category'
-}],
+},
 
 
 }, {timestamps: true})
