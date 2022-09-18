@@ -57,7 +57,6 @@ favorite: {
     ref: 'Category'
 },
 
-
 }, {timestamps: true})
 
 

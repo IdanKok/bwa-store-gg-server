@@ -34,7 +34,7 @@ module.exports = {
                   try {
                     const player = new Player({ ...payload, avatar: filename,
                       });
-                      await player.save().populate('category');
+                      await player.save();
 
                       delete player._doc.password
                       res.status(201).json({ data: player}) 
