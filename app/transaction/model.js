@@ -41,6 +41,11 @@ value : {
     default : 0
 },
 
+tax : {
+    type : Number,
+    default : 0
+},
+
 status: {
     type: String,
     enum: ['pending' , 'succes', 'failed'],
